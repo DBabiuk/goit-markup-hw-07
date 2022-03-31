@@ -45,10 +45,11 @@
 }
   
 .join__item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-right: 10px;
+    &:last-child {
+        margin-right: 0;
+    }
+    .join__link{
     width: 44px;
     height: 44px;
 
@@ -58,15 +59,23 @@
 
     transition: background-color $duration $timing-function;
 
-    &:last-child {
-        margin-right: 0;
-    }
+   
 
     &:hover,
     &:focus {
         background-color: $accent-color;
     }
 }
+}
+// .join__link{
+//     &:hover,
+//     &:focus {
+//         background-color: $accent-color;
+//         svg{
+//             fill: $primary-white-color;
+//         }
+//     }
+// }
 
 .adress {
     font-style: normal;
@@ -79,7 +88,9 @@
         &:hover a{
             color: $accent-color;
         }
-    
+    a:focus{
+color: $accent-color;
+    }
         &:last-child {
             margin-bottom: 0;
         }
@@ -88,6 +99,7 @@
         line-height: 1.71;
         letter-spacing: 0.03em;
         color: rgba(255, 255, 255, 0.6);
+        transition: color $duration $timing-function;
     
         &-white {
             color: $primary-white-color;
